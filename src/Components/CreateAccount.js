@@ -17,7 +17,6 @@ const CreateAccount = ({
     Accountfirstname,
     Accountlastname,
     Accountbalance,
-    Accountemail,
     changeaccountfirstname,
     changeaccountlastname,
     updateaccountbalance,

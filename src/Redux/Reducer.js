@@ -8,7 +8,8 @@ import {
     WITHDRAWVALUE,
     DEPOSITVALUE,
     CLOSEMODAL,
-    CHANGEEMAIL
+    CHANGEEMAIL,
+    OPENINSUFFICIENTMODAL
 } from "./Types";
 
 const initialState = {
@@ -21,8 +22,7 @@ const initialState = {
     depositvalue: 0,
     depositmodal: false,
     withdrawalmodal: false,
-    depositinputFieldValue: "Amount to deposit",
-    withdrawinputFieldValue: "Amount to Withdraw"
+    insufficientmodal: false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -63,11 +63,12 @@ export const reducer = (state = initialState, action) => {
                 depositvalue: action.payload
             }
         case WITHDRAWAMOUNT:
-            return {
-                ...state,
-                balance: (Number(state.balance) - Number(state.withdrawvalue)).toFixed(2),
-                withdrawalmodal: !state.withdrawalmodal
-            }
+                return {
+                    ...state,
+                    balance: (Number(state.balance) - Number(state.withdrawvalue)).toFixed(2),
+                    withdrawalmodal: !state.withdrawalmodal
+                }
+            
         case DEPOSITAMOUNT:
             return {
                 ...state,
@@ -78,7 +79,13 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 depositmodal: false,
-                withdrawalmodal: false
+                withdrawalmodal: false,
+                insufficientmodal: false
+            }
+        case OPENINSUFFICIENTMODAL:
+            return {
+                ...state,
+                insufficientmodal: true
             }
         default: return state
     }

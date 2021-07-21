@@ -8,7 +8,8 @@ import {
     DEPOSITVALUE,
     WITHDRAWVALUE,
     CLOSEMODAL,
-    CHANGEEMAIL
+    CHANGEEMAIL,
+    OPENINSUFFICIENTMODAL
 } from "./Types";
 
 export const changeaccountfirstname = (value) => {
@@ -77,5 +78,11 @@ export const updatedewithdrawalvalue =(value) =>{
 export const closemodals =()=>{
     return{
         type: CLOSEMODAL
+    }
+}
+
+export const openInsufficientmodal = () => {
+    return {
+        type: OPENINSUFFICIENTMODAL,
     }
 }

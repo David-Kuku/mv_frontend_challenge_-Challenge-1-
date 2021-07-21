@@ -7,8 +7,10 @@ import {
     depositamount,
     withdrawamount,
     updatedepositvalue,
-    updatedewithdrawalvalue
+    updatedewithdrawalvalue,
+    openInsufficientmodal
 } from '../Redux/Action'
+
 import { connect } from 'react-redux'
 import './AccountInfo.css'
 
@@ -18,9 +20,22 @@ const AccountInfo = ({
     Accountlastname,
     updatedepositvalue,
     updatedewithdrawalvalue,
-    depositamount,
-    withdrawamount
+    deposit,
+    withdraw,
+    withdrawvalue,
+    openInsufficientmodal
 }) => {
+
+    const insufficient =()=>{
+        if(Number(Accountbalance) < Number(withdrawvalue)){
+            openInsufficientmodal()
+            
+        }
+        else{
+            withdraw()
+        }
+        
+    }
     return (
         <div >
             <div className="main" style={{ backgroundColor:"whitesmoke"}}>
@@ -38,7 +53,7 @@ const AccountInfo = ({
                 </div>
             </div>
             </div>
-            <div className="container mt-5">
+            <div className="container mt-5" >
                 <div className="row">
 
                     <div className="col-md-6 d-flex justify-content-center">
@@ -52,7 +67,7 @@ const AccountInfo = ({
                                         placeholder="Amount to deposit"
                                         onChange={e => updatedepositvalue(e.target.value)} />
                                 </div>
-                                <button className="btn btn-success mt-3" onClick={depositamount} type="reset">Deposit</button>
+                                <button className="btn btn-success mt-3" onClick={deposit} type="reset">Deposit</button>
                             </form>
                         </div>
                     </div>
@@ -68,7 +83,7 @@ const AccountInfo = ({
                                         onChange={e => updatedewithdrawalvalue(e.target.value)}
                                     />
                                 </div>
-                                <button className="btn btn-danger mt-3" type="reset" onClick={withdrawamount}>Withdraw</button>
+                                <button className="btn btn-danger mt-3" type="reset" onClick={insufficient}>Withdraw</button>
                             </form>
                         </div>
                     </div>
@@ -86,7 +101,8 @@ const mapStateToProps = (state) => {
         Accountbalance: state.balance,
         createstatus: state.createstatus,
         withdrawvalue: state.withdrawvalue,
-        depositvalue: state.depositvalue
+        depositvalue: state.depositvalue,
+        insufficientmodal: state.insufficientmodal
     }
 }
 
@@ -96,10 +112,11 @@ const mapDispatchToProps = (dispatch) => {
         changeaccountlastname: (value) => { dispatch(changeaccountlastname(value)) },
         updateaccountbalance: (value) => { dispatch(updateaccountbalance(value)) },
         updatecreatestatus: () => { dispatch(updatecreatestatus()) },
-        depositamount: () => { dispatch(depositamount()) },
-        withdrawamount: () => { dispatch(withdrawamount()) },
+        deposit: () => { dispatch(depositamount()) },
+        withdraw: () => { dispatch(withdrawamount()) },
         updatedewithdrawalvalue: (value) => { dispatch(updatedewithdrawalvalue(value)) },
-        updatedepositvalue: (value) => { dispatch(updatedepositvalue(value)) }
+        updatedepositvalue: (value) => { dispatch(updatedepositvalue(value)) },
+        openInsufficientmodal: () => { dispatch(openInsufficientmodal())}
     }
 }
 
