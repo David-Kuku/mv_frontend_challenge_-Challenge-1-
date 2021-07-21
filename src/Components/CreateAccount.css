@@ -1,0 +1,28 @@
+.welcome-text{
+    width: 336px;
+    height: 49px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+    
+    color: #32855B;
+}
+
+.createAccount-form{
+    background-color: whitesmoke;
+    width: 300px;
+    height: 350px;
+    /* box-shadow: 10px grey !important; */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.create-text{
+    font-size: 20px;
+}

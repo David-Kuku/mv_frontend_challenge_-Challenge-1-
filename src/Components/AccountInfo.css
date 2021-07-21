@@ -1,0 +1,29 @@
+.accountinfodisplay{
+    background-color: whitesmoke;
+    height: 250px;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.text{
+    height: 22px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    color: #32855B;
+}
+
+.deposit, .withdraw{
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 150px;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

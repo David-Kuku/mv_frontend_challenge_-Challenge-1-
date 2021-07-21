@@ -1,0 +1,42 @@
+.ModalContainer{
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
+    z-index: 1;
+}
+
+.Modal{
+    background-color: white;
+    position: relative;
+    width: 290px;
+    height: 108px;
+    padding: 5px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.x{
+    cursor: pointer;
+    transition: .4s;
+    border-radius: 5px;
+    border: none;
+}
+
+.x:hover{
+    transform: scale(1.03);
+    
+    background-color: red;
+}
