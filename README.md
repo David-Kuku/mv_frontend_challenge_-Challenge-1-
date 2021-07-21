@@ -27,7 +27,7 @@ Here, you fill the form with your full name, email and opening amount you'll lik
 All that important is the first name ( both firstname and lastname), as the email is not required and also the opening amount can be left empty.
 An empty opening amount means one is opening the account with $0, then he or she can choose to deposit later on.
 When putting an opening amount, a negative number will throw an error, so only positive numbers.
-If you try to withdraw more than what is in the account, It shows an error saying insufficient error.
+If you try to withdraw more than what is in the account, It shows an error saying insufficient balance.
 
 ### Once that's done
 You'll be directed to a page where you can choose to deposit or withdraw money. 
