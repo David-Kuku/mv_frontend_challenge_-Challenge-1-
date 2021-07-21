@@ -39,7 +39,7 @@ const AccountInfo = ({
     return (
         <div >
             <div className="main" style={{ backgroundColor:"whitesmoke"}}>
-            <div className="d-flex mb-3 ms-5">
+            <div className="d-flex mb-3 ms-4">
                         <img style={{ width: "250px", height: "80px", marginTop:"20px" }} src="MakersValley-Logo.png" />
                     </div>
             <div className="accountinfodisplay">

@@ -44,37 +44,41 @@ const CreateAccount = ({
                                         <form className="createAccount-form">
                                             <div>
                                                 <div className="text-center mb-3 create-text"><b>Create Account</b></div>
-                                                <div className="mb-4">
-
+                                                <div className="mb-3">
+                                                    <div>First name <span className="text-danger">*</span></div>
                                                     <input
                                                         onChange={e => changeaccountfirstname(e.target.value)}
                                                         placeholder="Firstname"
                                                         type="text"
-                                                        required />
+                                                        required 
+                                                        style={{width: "230px "}}/>
                                                 </div>
-                                                <div className="mb-4">
-
+                                                <div className="mb-3">
+                                                    <div>Last name <span className="text-danger">*</span></div>
                                                     <input
                                                         placeholder="Lastname"
                                                         onChange={e => changeaccountlastname(e.target.value)}
                                                         type="text"
-                                                        required />
+                                                        required 
+                                                        style={{width: "230px "}}/>
                                                 </div>
 
 
-                                                <div className="mb-4">
-
+                                                <div className="mb-3">
+                                                    <div>E-mail</div>
                                                     <input
                                                         placeholder="Email"
                                                         type="email"
-                                                        required />
+                                                        required 
+                                                        style={{width: "230px "}}/>
                                                 </div>
-                                                <div className="mb-4">
-
+                                                <div className="mb-3">
+                                                    Opening Amount
                                                     <input
                                                         placeholder="Opening Amount"
                                                         type="number"
                                                         required
+                                                        style={{width: "230px "}}
                                                         onChange={e => updateaccountbalance(e.target.value)} />
                                                 </div>
                                                 <div className="mb-4">
