@@ -7,7 +7,8 @@ import {
     DEPOSITAMOUNT,
     DEPOSITVALUE,
     WITHDRAWVALUE,
-    CLOSEMODAL
+    CLOSEMODAL,
+    CHANGEEMAIL
 } from "./Types";
 
 export const changeaccountfirstname = (value) => {
@@ -20,6 +21,13 @@ export const changeaccountfirstname = (value) => {
 export const changeaccountlastname = (value) => {
     return {
         type: CHANGEACCOUNTLASTNAME,
+        payload: value
+    }
+}
+
+export const changeaccountemail = (value) => {
+    return {
+        type: CHANGEEMAIL,
         payload: value
     }
 }

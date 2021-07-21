@@ -15,12 +15,15 @@ import AccountInfo from './AccountInfo'
 
 const CreateAccount = ({
     Accountfirstname,
+    Accountlastname,
+    Accountbalance,
+    Accountemail,
     changeaccountfirstname,
     changeaccountlastname,
     updateaccountbalance,
     createstatus,
     updatecreatestatus,
- }) => {
+}) => {
     return (
         <>
             {
@@ -28,7 +31,7 @@ const CreateAccount = ({
                     <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
                         <div className="container p-5">
                             <div className="d-flex justify-content-center mb-3">
-                                <img style={{width:"100px", height:"100px"}} src = "makers.png"/>
+                                <img style={{ width: "100px", height: "100px" }} src="makers.png" />
                             </div>
                             <div className="row">
                                 <div className="col-9 col-lg-3 col-md-6 mx-auto welcome-text text-center mb-4"> Welcome to Bank App</div>
@@ -37,55 +40,64 @@ const CreateAccount = ({
 
                             <div className="row">
                                 <div className="col-md-3"></div>
-                                <div className="col-md-6 d-flex justify-content-center">
-                                    <form className="createAccount-form">
-                                        <div>
-                                            <div className="text-center mb-3 create-text"><b>Create Account</b></div>
-                                            <div className="mb-4">
+                                <div className="col-md-6">
+                                    <div className=" d-flex justify-content-center">
+                                        <form className="createAccount-form">
+                                            <div>
+                                                <div className="text-center mb-3 create-text"><b>Create Account</b></div>
+                                                <div className="mb-4">
 
-                                                <input
-                                                    onChange={e => changeaccountfirstname(e.target.value)}
-                                                    placeholder="Firstname"
-                                                    type="text"
-                                                    required />
+                                                    <input
+                                                        onChange={e => changeaccountfirstname(e.target.value)}
+                                                        placeholder="Firstname"
+                                                        type="text"
+                                                        required />
+                                                </div>
+                                                <div className="mb-4">
+
+                                                    <input
+                                                        placeholder="Lastname"
+                                                        onChange={e => changeaccountlastname(e.target.value)}
+                                                        type="text"
+                                                        required />
+                                                </div>
+
+
+                                                <div className="mb-4">
+
+                                                    <input
+                                                        placeholder="Email"
+                                                        type="email"
+                                                        required />
+                                                </div>
+                                                <div className="mb-4">
+
+                                                    <input
+                                                        placeholder="Opening Amount"
+                                                        type="number"
+                                                        required
+                                                        onChange={e => updateaccountbalance(e.target.value)} />
+                                                </div>
+                                                <div className="mb-4">
+
+                                                    <button className="btn btn-success " onClick={
+                                                        (Accountfirstname && Accountlastname) ? updatecreatestatus : null}>Create Account</button>
+                                                </div>
                                             </div>
-                                            <div className="mb-4">
+                                        </form>
 
-                                                <input
-                                                    placeholder="Lastname"
-                                                    onChange={e => changeaccountlastname(e.target.value)}
-                                                    type="text"
-                                                    required />
-                                            </div>
-
-
-                                            <div className="mb-4">
-
-                                                <input
-                                                    placeholder="Email"
-                                                    type="email"
-                                                    required />
-                                            </div>
-                                            <div className="mb-4">
-
-                                                <input
-                                                    placeholder="Opening Amount"
-                                                    type="number"
-                                                    required
-                                                    onChange={e => updateaccountbalance(e.target.value)} />
-                                            </div>
-                                            <div className="mb-4">
-
-                                                <button className="btn btn-success " onClick={Accountfirstname ? updatecreatestatus : null}>Create Account</button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    </div>
+                                    {
+                                        Accountbalance < 0 ? <div className="d-flex justify-content-center text-danger">Enter a valid amount</div> : null
+                                    }
                                 </div>
+
                                 <div className="col-md-6"></div>
                             </div>
                         </div>
+
                     </div> :
-                    <AccountInfo/>
+                    <AccountInfo />
             }
 
         </>
@@ -96,6 +108,7 @@ const mapStateToProps = (state) => {
     return {
         Accountfirstname: state.accountfirstname,
         Accountlastname: state.accountlastname,
+        Accountemail: state.accountemail,
         Accountbalance: state.balance,
         createstatus: state.createstatus,
         withdrawvalue: state.withdrawvalue,

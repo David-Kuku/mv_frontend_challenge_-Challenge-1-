@@ -7,20 +7,22 @@ import {
     DEPOSITAMOUNT,
     WITHDRAWVALUE,
     DEPOSITVALUE,
-    CLOSEMODAL
+    CLOSEMODAL,
+    CHANGEEMAIL
 } from "./Types";
 
 const initialState = {
     accountfirstname: null,
     accountlastname: null,
+    accountemail: null,
     balance: 0,
     createstatus: false,
     withdrawvalue: 0,
     depositvalue: 0,
     depositmodal: false,
     withdrawalmodal: false,
-    depositinputFieldValue:"Amount to deposit",
-    withdrawinputFieldValue:"Amount to Withdraw"
+    depositinputFieldValue: "Amount to deposit",
+    withdrawinputFieldValue: "Amount to Withdraw"
 }
 
 export const reducer = (state = initialState, action) => {
@@ -34,6 +36,11 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 accountlastname: action.payload
+            }
+        case CHANGEEMAIL:
+            return {
+                ...state,
+                accountemail: action.payload
             }
         case UPDATEACCOUNTBALANCE:
             return {
@@ -68,7 +75,7 @@ export const reducer = (state = initialState, action) => {
                 depositmodal: !state.depositmodal
             }
         case CLOSEMODAL:
-            return{
+            return {
                 ...state,
                 depositmodal: false,
                 withdrawalmodal: false
