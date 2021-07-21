@@ -30,4 +30,4 @@ When putting an opening amount, a negative number will throw an error, so only p
 
 ### Once that's done
 You'll be directed to a page where you can choose to deposit or withdraw money. 
-This page shows the account name, and account balance. Whenever a deposit is made, it is reflected in the account balance immediately.
+This page shows the account name, and account balance. Whenever a deposit or withdrawal is made, it is reflected in the account balance immediately.
