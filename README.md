@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 To start,
 After cloning the repo, run 
 
-### npm init
+### npm install
 
 This installs all the package I used in building the app.
 
