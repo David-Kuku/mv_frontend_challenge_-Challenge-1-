@@ -5,19 +5,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## This is a basic bank app created with Create React App
 
 To start,
-After cloning the repo, run 
+After cloning the repo, with "git clone https://github.com/David-Kuku/mv_frontend_challenge_-Challenge-1-.git", run 
 
 ### npm install
 
-This installs all the package I used in building the app.
+This installs all the package I used in building the app which will be needed to run the app.
 
 Then, run
 ### npm start
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
 Once the app opens in the browser,
