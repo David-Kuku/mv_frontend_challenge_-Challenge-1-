@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The command I used to create the app : npx create-react-app "App name"
 
 ## This is a basic bank app created with Create React App
 
